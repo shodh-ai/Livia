@@ -1,0 +1,7 @@
+# ninja log v5
+0	14367	1720689051852625956	/binoy/gpt-neox-custom/build/temp.linux-x86_64-cpython-310/binoy/gpt-neox-custom/megatron/fused_kernels/scaled_upper_triang_masked_softmax.o	e3c26b4f70f51580
+0	39569	1720689077053674344	/binoy/gpt-neox-custom/build/temp.linux-x86_64-cpython-310/binoy/gpt-neox-custom/megatron/fused_kernels/scaled_upper_triang_masked_softmax_cuda.o	d74cfd1ede7639db
+2	14116	1720689091422274434	/binoy/gpt-neox-custom/build/temp.linux-x86_64-cpython-310/binoy/gpt-neox-custom/megatron/fused_kernels/scaled_masked_softmax.o	9e2578bc5a67e6d6
+2	38573	1720689115879299607	/binoy/gpt-neox-custom/build/temp.linux-x86_64-cpython-310/binoy/gpt-neox-custom/megatron/fused_kernels/scaled_masked_softmax_cuda.o	94cc1a474e3dcb94
+2	13898	1720689130047895604	/binoy/gpt-neox-custom/build/temp.linux-x86_64-cpython-310/binoy/gpt-neox-custom/megatron/fused_kernels/fused_rotary_positional_embedding.o	15126c356e27b640
+2	37187	1720689153336878448	/binoy/gpt-neox-custom/build/temp.linux-x86_64-cpython-310/binoy/gpt-neox-custom/megatron/fused_kernels/fused_rotary_positional_embedding_cuda.o	10d2ae6001c298c1

@@ -1,0 +1,80 @@
+WARNING:root:Outstanding DeepSpeed issue means that pp>0, zero1, and bf16 will break without fp32 grads
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_init.py", line 741, in init
+    wi.setup(kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_init.py", line 81, in setup
+    self._wl = wandb_setup._setup()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_setup.py", line 242, in _setup
+    wl = _WandbSetup(settings=settings)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_setup.py", line 231, in __init__
+    _WandbSetup._instance = _WandbSetup__WandbSetup(settings=settings)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_setup.py", line 92, in __init__
+    self._settings_setup(settings, self._early_logger)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_setup.py", line 118, in _settings_setup
+    s._infer_run_settings_from_env(_logger=early_logger)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_settings.py", line 929, in _infer_run_settings_from_env
+    program_relpath = self.program_relpath or _get_program_relpath_from_gitrepo(
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_settings.py", line 148, in _get_program_relpath_from_gitrepo
+    root = repo.root
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/lib/git.py", line 50, in root
+    return self.repo.git.rev_parse("--show-toplevel")
+  File "/usr/local/lib/python3.8/dist-packages/git/cmd.py", line 741, in <lambda>
+    return lambda *args, **kwargs: self._call_process(name, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/git/cmd.py", line 1315, in _call_process
+    return self.execute(call, **exec_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/git/cmd.py", line 1109, in execute
+    raise GitCommandError(redacted_command, status, stderr_value, stdout_value)
+git.exc.GitCommandError: Cmd('git') failed due to: exit code(128)
+  cmdline: git rev-parse --show-toplevel
+  stderr: 'fatal: detected dubious ownership in repository at '/workspace/My_Test/gpt-neox-custom'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /workspace/My_Test/gpt-neox-custom'
+wandb: ERROR Abnormal program exit
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_init.py", line 741, in init
+    wi.setup(kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_init.py", line 81, in setup
+    self._wl = wandb_setup._setup()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_setup.py", line 242, in _setup
+    wl = _WandbSetup(settings=settings)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_setup.py", line 231, in __init__
+    _WandbSetup._instance = _WandbSetup__WandbSetup(settings=settings)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_setup.py", line 92, in __init__
+    self._settings_setup(settings, self._early_logger)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_setup.py", line 118, in _settings_setup
+    s._infer_run_settings_from_env(_logger=early_logger)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_settings.py", line 929, in _infer_run_settings_from_env
+    program_relpath = self.program_relpath or _get_program_relpath_from_gitrepo(
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_settings.py", line 148, in _get_program_relpath_from_gitrepo
+    root = repo.root
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/lib/git.py", line 50, in root
+    return self.repo.git.rev_parse("--show-toplevel")
+  File "/usr/local/lib/python3.8/dist-packages/git/cmd.py", line 741, in <lambda>
+    return lambda *args, **kwargs: self._call_process(name, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/git/cmd.py", line 1315, in _call_process
+    return self.execute(call, **exec_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/git/cmd.py", line 1109, in execute
+    raise GitCommandError(redacted_command, status, stderr_value, stdout_value)
+git.exc.GitCommandError: Cmd('git') failed due to: exit code(128)
+  cmdline: git rev-parse --show-toplevel
+  stderr: 'fatal: detected dubious ownership in repository at '/workspace/My_Test/gpt-neox-custom'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /workspace/My_Test/gpt-neox-custom'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "train.py", line 34, in <module>
+    main()
+  File "train.py", line 30, in main
+    pretrain(neox_args=neox_args)
+  File "/workspace/My_Test/gpt-neox-custom/megatron/training.py", line 186, in pretrain
+    init_wandb(neox_args=neox_args)
+  File "/workspace/My_Test/gpt-neox-custom/megatron/utils.py", line 171, in init_wandb
+    wandb.init(
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_init.py", line 781, in init
+    six.raise_from(Exception("problem"), error_seen)
+  File "<string>", line 3, in raise_from
+Exception: problem

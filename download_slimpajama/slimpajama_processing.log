@@ -1,0 +1,24 @@
+Running: python merge_zst_to_jsonl.py DATA/ chunks/ --semaphore 100
+Merged 6289 files into chunks/test/test_chunk3.jsonl
+Merged 6279 files into chunks/test/test_chunk5.jsonl
+Merged 6282 files into chunks/test/test_chunk1.jsonl
+Merged 6288 files into chunks/test/test_chunk4.jsonl
+Merged 6273 files into chunks/test/test_chunk2.jsonl
+Merged 6286 files into chunks/validation/validation_chunk3.jsonl
+Merged 6301 files into chunks/validation/validation_chunk5.jsonl
+Merged 6279 files into chunks/validation/validation_chunk1.jsonl
+Merged 6284 files into chunks/validation/validation_chunk4.jsonl
+Merged 6278 files into chunks/validation/validation_chunk2.jsonl
+Execution Time: 29 seconds
+Running: python merge_zst_to_jsonl.py DATA/ chunks/ --semaphore 100
+Merged 6289 files into chunks/test/test_chunk3.jsonl
+Merged 6279 files into chunks/test/test_chunk5.jsonl
+Merged 6282 files into chunks/test/test_chunk1.jsonl
+Merged 6288 files into chunks/test/test_chunk4.jsonl
+Merged 6273 files into chunks/test/test_chunk2.jsonl
+Merged 6286 files into chunks/validation/validation_chunk3.jsonl
+Merged 6301 files into chunks/validation/validation_chunk5.jsonl
+Merged 6279 files into chunks/validation/validation_chunk1.jsonl
+Merged 6284 files into chunks/validation/validation_chunk4.jsonl
+Merged 6278 files into chunks/validation/validation_chunk2.jsonl
+Execution Time: 53 seconds

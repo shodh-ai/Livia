@@ -1,0 +1,71 @@
+NeoXArgs.configure_distributed_args() using world size: 1 and model-parallel size: 1 
+> building HFTokenizer tokenizer ...
+ > padded vocab (size: 32000) with 0 dummy tokens (new size: 32000)
+> setting tensorboard ...
+> initializing torch distributed ...
+> initializing model parallel with size 1
+MPU DP: [0]
+MPU PP: [0]
+MPU MP: [0]
+> setting random seeds to 1234 ...
+building GPT2 model ...
+SEED_LAYERS=False BASE_SEED=1234 SEED_FN=None
+Using topology: {ProcessCoord(pipe=0, data=0, model=0): 0}
+stage=0 layers=13
+     0: EmbeddingPipe
+     1: _pre_transformer_block
+     2: ParallelTransformerLayerPipe
+     3: ParallelTransformerLayerPipe
+     4: ParallelTransformerLayerPipe
+     5: ParallelTransformerLayerPipe
+     6: ParallelTransformerLayerPipe
+     7: ParallelTransformerLayerPipe
+     8: ParallelTransformerLayerPipe
+     9: ParallelTransformerLayerPipe
+    10: _post_transformer_block
+    11: NormPipe
+    12: ParallelLinearPipe
+  loss: partial
+Configuring Optimizer type: Adam with params: {'lr': 0.0002, 'betas': [0.9, 0.95], 'eps': 1e-08}
+> learning rate decay style: cosine
+DeepSpeed is enabled.
+ > number of parameters on model parallel rank 0: 416442368
+ > total params: 416,442,368
+Unable to load checkpoint.
+Loading checkpoint and starting from iteration 0
+> building train, validation, and test datasets ...
+    reading sizes...
+    reading pointers...
+    reading document index...
+    creating numpy buffer of mmap...
+    creating memory view of numpy buffer...
+ > dataset split:
+    train:
+     document indices in [0, 953578) total of 953578 documents
+    validation:
+     document indices in [953578, 1003819) total of 50241 documents
+    test:
+     document indices in [1003819, 1004824) total of 1005 documents
+ > loading doc-idx mapping from /mnt/data/custom/BIN/data_text_document_train_indexmap_1400000ns_2048sl_1234s_doc_idx.npy
+ > loading sample-idx mapping from /mnt/data/custom/BIN/data_text_document_train_indexmap_1400000ns_2048sl_1234s_sample_idx.npy
+ > loading shuffle-idx mapping from /mnt/data/custom/BIN/data_text_document_train_indexmap_1400000ns_2048sl_1234s_shuffle_idx.npy
+    loaded indexed file in 0.033 seconds
+    total number of samples: 1460095
+    total number of epochs: 3
+ > loading doc-idx mapping from /mnt/data/custom/BIN/data_text_document_valid_indexmap_140040ns_2048sl_1234s_doc_idx.npy
+ > loading sample-idx mapping from /mnt/data/custom/BIN/data_text_document_valid_indexmap_140040ns_2048sl_1234s_sample_idx.npy
+ > loading shuffle-idx mapping from /mnt/data/custom/BIN/data_text_document_valid_indexmap_140040ns_2048sl_1234s_shuffle_idx.npy
+    loaded indexed file in 0.001 seconds
+    total number of samples: 152998
+    total number of epochs: 6
+ > loading doc-idx mapping from /mnt/data/custom/BIN/data_text_document_test_indexmap_40ns_2048sl_1234s_doc_idx.npy
+ > loading sample-idx mapping from /mnt/data/custom/BIN/data_text_document_test_indexmap_40ns_2048sl_1234s_sample_idx.npy
+ > loading shuffle-idx mapping from /mnt/data/custom/BIN/data_text_document_test_indexmap_40ns_2048sl_1234s_shuffle_idx.npy
+    loaded indexed file in 0.001 seconds
+    total number of samples: 535
+    total number of epochs: 1
+setting training data start iteration to 0
+setting validation data start iteration to 0
+done with setups ...
+time (ms) | model and optimizer: 1722.47 | train/valid/test data iterators: 185.97
+training ...

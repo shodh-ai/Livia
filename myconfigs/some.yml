@@ -1,0 +1,150 @@
+# GPT-2 pretraining setup
+{
+  #"data_path": "/mnt/data/Tejas/GPT-NEOX/custom/BIN/data_text_document",
+   "train_data_paths": ["/workspace/binoy/gpt-neox/datasets/slimpajama_1B_neox_dataset/neox_train/neox_train_text_document"],
+   "valid_data_paths": ["/workspace/binoy/gpt-neox/datasets/slimpajama_1B_neox_dataset/neox_val/neox_val_text_document"],
+   "test_data_paths": ["/workspace/binoy/gpt-neox/datasets/slimpajama_1B_neox_dataset/neox_test/neox_test_text_document"],
+
+  "vocab_file": "/workspace/binoy/gpt-neox/tokenizer_vocabs/test_mini.json",
+  "tokenizer_type": "HFTokenizer",
+
+   "checkpoint_validation_with_forward_pass": False,
+
+  "save": "/workspace/binoy/gpt-neox/checkpoints-neox/already_evaled/test_for_equality",
+  "load": "/workspace/binoy/gpt-neox/checkpoints-neox/already_evaled/test_for_equality",
+  "tensorboard_dir": "/workspace/binoy/gpt-neox/tensorboard-neox/test_for_equality",
+  "log_dir": "/workspace/binoy/gpt-neox/log-neox/test_for_equality",
+
+
+  "use_wandb": False,
+  "wandb_host": "https://api.wandb.ai",
+  "wandb_project": "70M_CRMS_NOLZM_DPHA_0.2_PreNorm_Harshit",
+  # "wandb_group": "3B-CRMS_PreNorm",
+
+  "make_vocab_size_divisible_by": 1,
+
+   "pipe_parallel_size": 0,
+   "model_parallel_size": 1,
+  #  "num_gpus": 4,
+
+  
+  # model settings
+    "num_layers": 1,
+    "hidden_size": 3,
+    "num_attention_heads": 1,
+    "seq_length": 5,
+    "max_position_embeddings": 5,
+  # "num_kv_heads": 2,
+  
+
+   "pos_emb": "rotary",
+   "no_weight_tying": true,
+   "gpt_j_residual": false,
+   "output_layer_parallelism": "column",
+
+   "attention_config": [[["flash"], 1]],
+
+  #  "norm": "rmsnorm",
+  #  "rms_norm_epsilon": 1.0e-8,
+
+  #  "norm": "crmsnorm",
+  #  "crms_norm_epsilon": 1.0e-8,
+  
+  #  "norm": "jslayernorm",
+  #  "jslayer_norm_epsilon" : 1.0e-8,
+
+  #  "linear_zero_mean": True,
+
+  #  "dual_residual" : True,
+   "norm": "layernorm",
+
+   "norm_rearrange": False, 
+   "activation": "swiglu",
+
+   # these should provide some speedup but takes a while to build, set to true if desired
+   "scaled_upper_triang_masked_softmax_fusion": false,
+   "bias_gelu_fusion": false,
+   "rope_fusion": false,
+   "layernorm_fusion": false,
+
+   # init methods
+   "init_method": "small_init",
+   "output_layer_init_method": "wang_init",
+
+   # optimizer settings
+   "optimizer": {
+     "type": "Adam",
+     "params": {
+       "lr": 0.0001,
+       "betas": [0.9, 0.95],
+       "eps":  1.0e-8,
+     }
+   },
+   "min_lr": 0.00001,
+  #  "use_checkpoint_lr_scheduler"  : True,
+
+  #  # for all zero_optimization options, see https://www.deepspeed.ai/docs/config-json/#zero-optimizations-for-fp16-training
+   "zero_optimization": {
+    "stage": 0,
+    "allgather_partitions": True,
+    "allgather_bucket_size": 500000000,
+    "overlap_comm": True,
+    "reduce_scatter": True,
+    "reduce_bucket_size": 500000000,
+    "contiguous_gradients": False,
+    
+  },
+
+   # batch / data settings
+  # "train_batch_size": 16,
+  "train_micro_batch_size_per_gpu": 1,
+
+
+   "data_impl": "mmap",
+   "num_workers": 1,
+  #  "split": "949,50,1",
+
+   # activation checkpointing
+   "checkpoint_activations": true,
+   "checkpoint_num_layers": 1,
+   "partition_activations": true,
+   "synchronize_each_layer": true,
+
+   # regularization
+   "gradient_clipping": 1.0,
+   "weight_decay": 0.1,
+   "hidden_dropout": 0.0,
+   "attention_dropout": 0.0,
+
+  #  #precision settings
+  #  "fp16": {
+  #    "fp16": true,
+  #    "enabled": true,
+  #    "loss_scale": 0,
+  #    "loss_scale_window": 1000,
+  #    "hysteresis": 2,
+  #    "min_loss_scale": 1
+  #  },
+
+   "precision": "bfloat16",
+
+  #  "fp32_allreduce": True, # without a patch to torch, bf16 models have to do the allreduce in fp32
+
+   # misc. training settings
+   "train_iters": 100000,
+   "lr_decay_iters": 100000,
+   "distributed_backend": "nccl",
+   "lr_decay_style": "cosine",
+   "warmup": 0.00,
+   "checkpoint_factor": 5000,
+   "eval_interval": 5000,
+   "eval_iters": 10,
+   "do_test": true,
+   "extra_save_iters": [10,100,500,1000],
+
+   # logging
+   "log_interval": 10,
+   "steps_per_print": 10,
+   "keep_last_n_checkpoints": 10,
+   "wall_clock_breakdown": True,
+}

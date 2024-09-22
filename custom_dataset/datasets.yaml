@@ -1,0 +1,37 @@
+ADD_TAGS:
+  - name: "microsoft/orca-math-word-problems-200k"
+    code: |
+      lambda example: {"text": "<question>" + example["question"] + "</question>" + "<answer>" + example["answer"] + "</answer>"}
+    remove_columns: ["question", "answer"]
+
+  - name: "nampdn-ai/tiny-orca-textbooks"
+    code: |
+      lambda example: {"text": "<prompt>" + example["prompt"] + "</prompt>" + "<textbook>" + example["textbook"] + "</textbook>" + "<question>" + example["question"] + "</question>" + "<answer>" + example["response"] + "</answer>"}
+    remove_columns: ["id", "prompt", "textbook", "question", "response"]
+
+  - name: "nampdn-ai/mini-ultrachat"
+    code: |
+      lambda example: {"text": "<bos>" + "".join(example["data"]) + "<eos>"}
+    remove_columns: ["id","data"]
+
+  - name: "nampdn-ai/mini-peS2o"
+    code: |
+      lambda example: {"text": "<bos>" + example["text"] + "<eos>"}
+    remove_columns: ["id","source","created","added","len"]
+
+  - name: "stingning/ultrachat"
+    code: |
+      lambda example: {"text": "<bos>" + "".join(example["data"]) + "<eos>"}
+    remove_columns: ["id","data"]
+
+  - name: "kernelmachine/open-license-corpus, sw_hackernews"
+    code: |
+      lambda example: {"text": "<bos>" + example["text"] + "<eos>"}
+
+  - name: "kernelmachine/open-license-corpus, sw_amps_math"
+    code: |
+      lambda example: {"text": "<bos>" + example["text"] + "<eos>"}
+
+  - name: "kernelmachine/open-license-corpus, ccby_wikipedia"
+    code: |
+      lambda example: {"text": "<bos>" + example["text"] + "<eos>"}

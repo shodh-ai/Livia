@@ -1,0 +1,1 @@
+WARNING:root:Outstanding DeepSpeed issue means that pp>0, zero1, and bf16 will break without fp32 grads

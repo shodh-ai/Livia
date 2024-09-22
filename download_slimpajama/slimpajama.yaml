@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: download-slimpajama-dataset-pod
+spec:
+  containers:
+  - name: download-dataset-container
+    image: inferqtejas/neox-custom-coreweave:v1
+    command: ["/bin/sleep", "infinity"]
+    #args: ["cd /mnt/data/SlimPajama && python3 multithread_downloader.py"]
+    volumeMounts:
+      - name: data
+        mountPath: /mnt/data
+    resources:
+      limits:
+        cpu: 96
+        memory: 96Gi
+  volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: neox-data
+  restartPolicy: OnFailure

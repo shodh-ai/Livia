@@ -1,0 +1,7 @@
+# ninja log v5
+0	15223	1718620193931865807	/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/build/temp.linux-x86_64-3.8/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/scaled_upper_triang_masked_softmax.o	39567da77e7795ca
+0	49667	1718620228381437805	/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/build/temp.linux-x86_64-3.8/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/scaled_upper_triang_masked_softmax_cuda.o	1199822404af02a
+1	14695	1718620243514104502	/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/build/temp.linux-x86_64-3.8/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/scaled_masked_softmax.o	dd06625be04f9ff8
+2	48865	1718620277683616220	/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/build/temp.linux-x86_64-3.8/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/scaled_masked_softmax_cuda.o	ac139bd87e1930a4
+1	14680	1718620292796287510	/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/build/temp.linux-x86_64-3.8/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/fused_rotary_positional_embedding.o	3f2756898ac20dd6
+1	46974	1718620325097727534	/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/build/temp.linux-x86_64-3.8/workspace/My_Test/gpt-neox-custom/megatron/fused_kernels/fused_rotary_positional_embedding_cuda.o	d5ba15ac70daadd
