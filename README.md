@@ -41,11 +41,11 @@ Our models are based on a Decoder-only Transformer architecture inspired by GPT-
 This project is built upon [GPT-NeoX](https://github.com/EleutherAI/gpt-neox). To set up and run the models, please follow the installation instructions provided in the GPT-NeoX repository.
 
 
-##Acknowledgements
+## Acknowledgements
 
 This project is based on GPT-NeoX. We extend our gratitude to the GPT-NeoX team for their open-source contribution, which made this work possible.
 
-###License
+## License
 
 Apache-2.0 License
 
