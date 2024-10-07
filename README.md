@@ -1,4 +1,4 @@
-#Livia: Efficient Small Language Models with Architectural Innovations
+# Livia: Efficient Small Language Models with Architectural Innovations
 
 We are excited to introduce **Livia**, a suite of Small Language Models (SLMs) developed by **Shodh AI**. Built on the foundation of our research paper, *[Livia: Towards Efficient Small Language Models—Enhancing Performance with Architectural Innovations](link_to_paper)*, this suite represents a significant step forward in delivering high-performance natural language processing (NLP) capabilities with minimal computational demands.
 
