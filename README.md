@@ -40,7 +40,7 @@ Our models are based on a Decoder-only Transformer architecture inspired by GPT-
 
 This project is built upon [GPT-NeoX](https://github.com/EleutherAI/gpt-neox). To set up and run the models, please follow the installation instructions provided in the GPT-NeoX repository.
 
-## Model chackpoints
+## Model checkpoints
 
 Model checkpoints referred in the research paper are uploaded at [Checkpoints](https://drive.google.com/drive/folders/11__pz_Ik_ToP8aVuUoM6AFx63vbpOrJ3?usp=drive_link)
 
